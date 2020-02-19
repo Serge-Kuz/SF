@@ -1,7 +1,6 @@
 import numpy as np
 import math
 
-
 def game_core_v3(number):
     '''Сначала устанавливаем любое random число, а потом уменьшаем или увеличиваем его
        в зависимости от того, больше оно или меньше нужного.
@@ -23,7 +22,7 @@ def game_core_v3(number):
                 else:
                    #predict += 1 #медленно подбираемся к цели ЗА 8 попыток
 
-                   #медленно подбираемся к цели ЗА 6 попыток
+                   #медленно подбираемся к цели ЗА 5 попыток
                    predict = math.ceil(predict + step)  
                    step = step * step2  if step * step2 > 1 else 1
 
@@ -39,7 +38,7 @@ def game_core_v3(number):
                 else:
                      #predict -= 1 #медленно подбираемся к цели ЗА 8 попыток
 
-                     #медленно подбираемся к цели ЗА 6 попыток
+                     #медленно подбираемся к цели ЗА 5 попыток
                      predict = math.ceil(predict - step)
                      step = step * step2 if step * step2 > 1 else 1
                     
@@ -62,4 +61,8 @@ def score_game(game_core_v1):
     return(score)
 
 # запускаем 
+
 score_game(game_core_v3)
+
+
+
